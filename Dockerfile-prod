@@ -1,0 +1,15 @@
+#Imagen temporal para construccion de proyecto
+FROM node:9.6.1 as builder
+RUN mkdir -p /home/app
+WORKDIR /home/app
+ENV PATH /home/app/node_modules/.bin:$PATH
+COPY package.json /home/app/package.json
+RUN npm install --silent && npm install react-scripts -g --silent 
+COPY . /home/app
+RUN npm run build
+
+# Produccion 
+FROM nginx:1.13.9-alpine
+COPY --from=builder /home/app/build /usr/share/nginx/html
+EXPOSE 3030
+CMD ["nginx","-g","daemon off;"]

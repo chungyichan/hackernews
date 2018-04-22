@@ -85,7 +85,7 @@ const Search = ({value, onChange, children}) => {
 }
 
 const Table = ({list, pattern,onDismiss}) => {
-    return (
+    return (  // test
       <div className="table">
         {list.filter(isSearched(pattern)).map(item =>
           <div key={item.objectID} className="table-row">

@@ -10,7 +10,7 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 
 # Instala create y cache de paquetes
 COPY package.json /home/app/package.json
-RUN npm install --silent && npm install react-scripts -g --silent 
+RUN npm i -g npm && npm install --silent && npm install react-scripts -g --silent && npm install axios
 
 # Corre el programa
 CMD ["npm","start"]

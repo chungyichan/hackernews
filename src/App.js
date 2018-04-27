@@ -90,7 +90,7 @@ class App extends Component {
     this.fetchSearchTopStories(searchTerm);
   }
 
-  componentDidUnmount () {
+  componentWillUnmount () {
     this._isMounted = false;
   }
 
@@ -211,3 +211,8 @@ class Developer {
 const robin = new Developer('Robin', 'Wier');
 console.log(robin.getName());
 export default App;
+export {
+  Button,
+  Table,
+  Search,
+};

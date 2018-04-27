@@ -10,7 +10,12 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 
 # Instala create y cache de paquetes
 COPY package.json /home/app/package.json
-RUN npm i -g npm && npm install --silent && npm install react-scripts -g --silent && npm install axios
+RUN npm i -g npm && \
+  npm install --silent && \
+  npm install react-scripts -g --silent && \
+  npm install axios && \
+  npm i --save-dev react-test-renderer && \
+  npm install --save-dev enzyme react-addons-test-utils enzyme-adapter-react-16
 
 # Corre el programa
 CMD ["npm","start"]

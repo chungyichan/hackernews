@@ -15,7 +15,7 @@ RUN npm i -g npm && \
   npm install react-scripts -g --silent && \
   npm install axios && \
   npm i --save-dev react-test-renderer && \
-  npm install --save-dev enzyme react-addons-test-utils enzyme-adapter-react-16
+  npm install prop-types
 
 # Corre el programa
 CMD ["npm","start"]

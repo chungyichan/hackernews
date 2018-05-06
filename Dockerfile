@@ -15,7 +15,9 @@ RUN npm i -g npm && \
   npm install react-scripts -g --silent && \
   npm install axios && \
   npm i --save-dev react-test-renderer && \
-  npm install prop-types
+  npm install prop-types && \
+  npm install --save react-fontawesome && \
+  npm install lodash
 
 # Corre el programa
 CMD ["npm","start"]

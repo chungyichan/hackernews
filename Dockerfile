@@ -17,7 +17,8 @@ RUN npm i -g npm && \
   npm i --save-dev react-test-renderer && \
   npm install prop-types && \
   npm install --save react-fontawesome && \
-  npm install lodash
+  npm install lodash && \
+  npm install classnames
 
 # Corre el programa
 CMD ["npm","start"]
